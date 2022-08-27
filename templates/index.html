@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title%}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Cash</th>
+                <th scope="col">Grand Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th scope="row">{{ username }}</th>
+            <td> <strong>{{ Cash }}</strong> </td>
+            <td> {{ GrandTotal }} </td>
+        </tbody>
+    </table>
+
+    <h2> {{username}}'s Owned Stocks:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Count</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Total Selling Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in miscInfo %}
+            {% if info["Count"] > 0 %}
+            <tr>
+                <th scope="col">{{ info["Symbol"] }}</th>
+                <td>{{ info["Count"] }}</td>
+                <td>{{ info["CurrentPrice"] }}</td>
+                <td>{{ info["CurrentPrice"] * info["Count"]}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

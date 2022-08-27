@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+Quote
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        <div class="mb-3">
+            <table class="table">
+                <thead>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Symbol</th>
+                </thead>
+                <tbody>
+                        <tr>
+                            <th scope="row"></th>
+                                <td>{{ look_up["name"] }}</td>
+                                <td>{{ look_up["price"] }}</td>
+                                <td>{{ look_up["symbol"] }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}

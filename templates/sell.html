@@ -1,0 +1,14 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+<form  method="post">
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" autofocus type="text" name="symbol" placeholder="Symbol">
+    </div>
+    <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% endblock %}

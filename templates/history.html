@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title%}
+    History
+{% endblock %}
+
+
+{% block main %}
+    <table class="table">
+        <h2 style = "margin:auto auto 40px auto">{{ user[0]["username"] }}'s Transaction History</h2>
+        <thead>
+            <tr>
+                <th scope="col">transaction_id</th>
+                <th scope="col">Stock Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">Operation</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ele in userTrs%}
+            <tr>
+            <th scope="row">{{ ele["transaction_id"] }}</th>
+            <td> <strong>{{ ele["stockSymbol"] }}</strong> </td>
+            <td> {{ ele["Price"] }} </td>
+            <td> {{ ele["opType"] }} </td>
+            <td> {{ ele["Time"] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
